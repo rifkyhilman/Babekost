@@ -5,16 +5,17 @@ import Navigation from './aplkasi/Navigation'
 class App extends React.Component {
   
   state = {
-    component: <Splash />
+    component: 
+    <Splash />
   }
 
-  componentDidMount = () => {
-    setTimeout(() => {
-      this.setState({
-        component: <Navigation />
-      })
-    }, 2000);
-  }
+  // componentDidMount = () => {
+  //   setTimeout(() => {
+  //     this.setState({
+  //       component: <Navigation />
+  //     })
+  //   }, 1000);
+  // }
 
   render() {
     return (this.state.component)
