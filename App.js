@@ -9,13 +9,13 @@ class App extends React.Component {
     <Splash />
   }
 
-  // componentDidMount = () => {
-  //   setTimeout(() => {
-  //     this.setState({
-  //       component: <Navigation />
-  //     })
-  //   }, 1000);
-  // }
+  componentDidMount = () => {
+    setTimeout(() => {
+      this.setState({
+        component: <Navigation />
+      })
+    }, 1000);
+  }
 
   render() {
     return (this.state.component)
