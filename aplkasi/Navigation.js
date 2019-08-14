@@ -21,7 +21,7 @@ const menu = createBottomTabNavigator({
     tabBarOptions: {
         activeTintColor: 'black',
         style: {
-            backgroundColor: '#ADD8E6'
+            backgroundColor: '#00b5ec'
         }
     },
     
@@ -31,25 +31,25 @@ const menu = createBottomTabNavigator({
           if (routeName === 'Home') {
             return (
               <Image
-                source={ require('../image/home.png') }
+                source={ require('../image/house.png') }
                 style={{ width: 20, height: 20, }} />
             );
           } else if (routeName === 'History') {
             return (
               <Image
-                source={ require('../image/History.png') }
+                source={ require('../image/folder.png') }
                 style={{ width: 20, height: 20, }} />
             );
           } else if (routeName === 'Profile') {
             return (
               <Image
-                source={ require('../image/profile.png') }
+                source={ require('../image/user.png') }
                 style={{ width: 20, height: 20, }} />
             );
           } else {
             return (
               <Image
-              source={ require('../image/home.png') }
+              source={ require('../image/house.png') }
                 style={{ width: 20, height: 20 }} />
             );
           }

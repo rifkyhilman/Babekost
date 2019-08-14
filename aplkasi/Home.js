@@ -1,25 +1,104 @@
-import React from 'react'
-import { View,Text,Image, StatusBar } from 'react-native';
+import React from 'react';
+import { 
+  View, Text, StatusBar, 
+  Image, ScrollView, Alert, TextInput, 
+  TouchableHighlight, ImageBackground 
+} from 'react-native';
+import axios from 'axios'
+import ImageSlider from 'react-native-image-slider'
 
 class Home extends React.Component {
- 
-  // constructor () {
-  //   super(); 
-  //   this.state={
-  //     Images:[
-  //      'https://www.google.com/imgres?imgurl=http%3A%2F%2Fwww.jotravelguide.com%2Fimages%2Fbandung%2Fmonument_perjuangan_rakyat_jabar.jpg&imgrefurl=http%3A%2F%2Fwww.jotravelguide.com%2Fbandung%2Fmonumen_dan_tugu_di_bandung.php&docid=STuz5uFw6W_zwM&tbnid=yF2PLPGRopIVcM%3A&vet=10ahUKEwjH7tTe5_zjAhVhILcAHYxOAxEQMwhVKAwwDA..i&w=500&h=375&safe=strict&bih=588&biw=1313&q=tugu%20kota%20bandung&ved=0ahUKEwjH7tTe5_zjAhVhILcAHYxOAxEQMwhVKAwwDA&iact=mrc&uact=8',
-  //      'https://www.google.com/imgres?imgurl=https%3A%2F%2Fawsimages.detik.net.id%2Fcustomthumb%2F2015%2F04%2F20%2F486%2F154437_img_20150420_115906.jpg%3Fw%3D780%26q%3D90&imgrefurl=https%3A%2F%2Fnews.detik.com%2Fberita-jawa-barat%2F2892524%2Fini-tugu-global-ikon-baru-bandung-yang-memuat-orasi-heroik-bung-karno&docid=abCoG1Ylu8otRM&tbnid=jldC7kSmVgffGM%3A&vet=10ahUKEwjH7tTe5_zjAhVhILcAHYxOAxEQMwhYKA8wDw..i&w=780&h=585&safe=strict&bih=588&biw=1313&q=tugu%20kota%20bandung&ved=0ahUKEwjH7tTe5_zjAhVhILcAHYxOAxEQMwhYKA8wDw&iact=mrc&uact=8'
-  //     ]
-  //   }
-  // }
- 
+
+  state = {
+    kota: [],
+    images: [
+      require('../ImageSlider/posterA.jpg'),
+      require('../ImageSlider/posterB.jpg'),
+      require('../ImageSlider/posterC.jpg'),
+      require('../ImageSlider/posterD.jpg'),
+    ]
+  }
+
+  componentDidMount = () => {
+    axios({
+      url: 'https://my-json-server.typicode.com/rifkyhillman26/babeserver/kota',
+      method: 'get'
+    })
+    .then( response => {
+      console.log(response.data)
+      this.setState({
+        kota: response.data
+      })
+    })
+  }
+
+  ditekan = () => {
+    return Alert.alert(`LOGIN dulu yaa..`);
+  }
+
+
   render() {
     return (
-      <View style={{backgroundColor:'#ADD8E6'}}>
-       <StatusBar backgroundColor="#ADD8E6" />
-       <Text style = {{padding: 10, fontSize: 20, color: 'black', textAlign:'center'}} >
-        BabeKost.com
-       </Text>
+      <View style={{ backgroundColor: '#D3D3D3' }}>
+        <StatusBar background= '#00b5ec' />
+        <View style={{ flexDirection: 'row' , backgroundColor: '#00b5ec', justifyContent: 'space-between', padding: 10 }}>
+          <Image style={{ width: 25, height: 25 }} source={require('../image/menu.png')} />
+          <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'black', textAlign: 'center', alignSelf: 'center', fontStyle: 'italic'}} >
+            BabeKost.com
+          </Text>
+          <Image source={require('../image/chat.png')} />
+        </View>
+        <ScrollView style={{marginBottom: 50}}>
+        <View style={{ backgroundColor: 'white', }}>
+          <Text style={{ marginLeft: 20, marginTop: 20 }}>
+            Hai,Rifki
+          </Text>
+          <Text style={{ fontSize: 20, marginLeft: 20, marginBottom: 10 }}>
+            Mau cari Kost dimana ?
+          </Text>
+          <TextInput style={{ backgroundColor: '#DCDCDC', borderRadius: 10, width: 320, marginLeft: 20, marginBottom: 15, paddingLeft: 15 }} />
+        </View>
+        <View style={{ backgroundColor: 'white' }}>
+          <Text style={{ fontWeight: 'bold', fontSize: 18, margin: 20, }}>
+            Iklan
+          </Text>
+          <View style={{flexDirection: 'row', height: 200, paddingLeft: 20, paddingRight: 20}}>
+          <ImageSlider 
+          images={this.state.images}
+          autoPlayWithInterval={3000}
+          />
+          </View>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between', padding: 20, alignItems: 'center',}}>
+            <Text>
+              Tertarik mengiklankan kosmu ?
+            </Text>
+            <TouchableHighlight onPress={this.ditekan}>
+              <View style={{backgroundColor: '#FF8C00',width: 80, height: 30, borderRadius: 5, justifyContent: 'center', alignItems: 'center'}}>
+                <Text style={{color: 'white', fontSize: 10}}>
+                  Pasang iklan 
+                </Text>
+              </View>
+            </TouchableHighlight>
+          </View>
+          <View>
+            <Text style={{fontWeight: 'bold', fontSize: 18, margin: 20,}}>
+              kota Populer
+            </Text>
+          </View>
+          <ScrollView horizontal={true} style={{margin: 10}}>
+           {
+             this.state.kota.map( (item, index) => {
+               return (
+                <ImageBackground key={index} source={{uri: item.image}} 
+                style={{ flex: 1, margin: 5, height: 150, width: 100, justifyContent: 'flex-end', alignItems:'center',}}>
+                  <Text style={{color: 'white', marginBottom: 10}}> {item.name} </Text>
+                </ImageBackground>
+               )
+             } )
+           }
+          </ScrollView>
+        </View>
+       </ScrollView>
       </View>
     )
   }

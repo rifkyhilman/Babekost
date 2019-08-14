@@ -4,7 +4,7 @@ import {
   Text,
   View,
   Image,
-  TouchableOpacity
+  Button
 } from 'react-native';
 
 export default class Profile extends Component {
@@ -13,19 +13,17 @@ export default class Profile extends Component {
     return (
       <View style={styles.container}>
           <View style={styles.header}></View>
-          <Image style={styles.avatar} source={{uri: 'https://bootdey.com/img/Content/avatar/avatar6.png'}}/>
+          <Image style={styles.avatar} source={{uri: 'https://avatars0.githubusercontent.com/u/51555828?s=460&v=4'}}/>
           <View style={styles.body}>
             <View style={styles.bodyContent}>
-              <Text style={styles.name}>John Doe</Text>
+              <Text style={styles.name}>Rifky Hillman</Text>
               <Text style={styles.info}>UX Designer / Mobile developer</Text>
               <Text style={styles.description}>Lorem ipsum dolor sit amet, saepe sapientem eu nam. Qui ne assum electram expetendis, omittam deseruisse consequuntur ius an,</Text>
-              
-              <TouchableOpacity style={styles.buttonContainer}>
-                <Text>Opcion 1</Text>  
-              </TouchableOpacity>              
-              <TouchableOpacity style={styles.buttonContainer}>
-                <Text>Opcion 2</Text> 
-              </TouchableOpacity>
+              <Button
+  title="Learn More"
+  color="#841584"
+  accessibilityLabel="Learn more about this purple button"
+/>          
             </View>
         </View>
       </View>
@@ -88,6 +86,7 @@ const styles = StyleSheet.create({
     width:250,
     borderRadius:30,
     backgroundColor: "#00BFFF",
+    marginTop: 20,
   },
 });
  
