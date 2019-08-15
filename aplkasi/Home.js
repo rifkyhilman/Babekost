@@ -39,7 +39,7 @@ class Home extends React.Component {
 
   render() {
     return (
-      <View style={{ backgroundColor: '#D3D3D3' }}>
+      <View style={{ backgroundColor: 'white' }}>
         <StatusBar background= '#00b5ec' />
         <View style={{ flexDirection: 'row' , backgroundColor: '#00b5ec', justifyContent: 'space-between', padding: 10 }}>
           <Image style={{ width: 25, height: 25 }} source={require('../image/menu.png')} />
@@ -56,7 +56,7 @@ class Home extends React.Component {
           <Text style={{ fontSize: 20, marginLeft: 20, marginBottom: 10 }}>
             Mau cari Kost dimana ?
           </Text>
-          <TextInput style={{ backgroundColor: '#DCDCDC', borderRadius: 10, width: 320, marginLeft: 20, marginBottom: 15, paddingLeft: 15 }} />
+          <TextInput style={{ backgroundColor: '#DCDCDC', borderRadius: 10, width: 320, marginLeft: 20, marginBottom: 15, paddingLeft: 15,}} placeholder='massukan alamat' />
         </View>
         <View style={{ backgroundColor: 'white' }}>
           <Text style={{ fontWeight: 'bold', fontSize: 18, margin: 20, }}>

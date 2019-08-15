@@ -3,19 +3,19 @@ import React from 'react'
 import { Image } from 'react-native'
 import Profile from './Profile'
 import Home from './Home'
-import History from './History'
+import Wishlist from './Wishlist'
 
 
 const menu = createBottomTabNavigator({
     Home: {
         screen: Home,
     },
-    History: {
-        screen: History,
+    Wishlist: {
+        screen: Wishlist,
     },
     Profile: {
         screen: Profile,
-    }
+    },
 }, {
     initialRouteName: 'Home',
     tabBarOptions: {
@@ -34,7 +34,7 @@ const menu = createBottomTabNavigator({
                 source={ require('../image/house.png') }
                 style={{ width: 20, height: 20, }} />
             );
-          } else if (routeName === 'History') {
+          } else if (routeName === 'Wishlist') {
             return (
               <Image
                 source={ require('../image/folder.png') }
