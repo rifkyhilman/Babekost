@@ -3,7 +3,7 @@ import React from 'react'
 import { Image } from 'react-native'
 import Profile from './Profile'
 import Home from './Home'
-import Wishlist from './Wishlist'
+import Wishlist from './Wishlis/Wishlist'
 
 
 const menu = createBottomTabNavigator({
@@ -19,9 +19,9 @@ const menu = createBottomTabNavigator({
 }, {
     initialRouteName: 'Home',
     tabBarOptions: {
-        activeTintColor: 'black',
+        activeTintColor: 'yellow',
         style: {
-            backgroundColor: '#00b5ec'
+            backgroundColor: '#424242'
         }
     },
     

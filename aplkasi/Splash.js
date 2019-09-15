@@ -1,15 +1,12 @@
 import React from 'react'
-import { View, Text, Image, ImageBackground } from 'react-native'
+import { View, Image, ImageBackground } from 'react-native'
 
 class Splash extends React.Component {
     render() {
         return (
-            <View style={{flex: 1, backgroundColor: '#00b5ec', justifyContent: 'space-between', alignItems: 'center', paddingBottom: null }}>
+            <View style={{flex: 1, backgroundColor: '#424242', alignItems: 'center' }}>
                 <View  style={{flex: 1, justifyContent: 'center',alignItems: 'center'}}>
-                    <Image style={{width: 70, height: 70, borderWidth: 3, borderColor: '#000000', borderRadius: 50, marginBottom: 10}} source={require('../image/man.png')} />
-                    <Text style={{fontSize: 30, fontWeight: 'bold', color: '#000000', fontStyle: 'italic' }}>
-                        BabeKost.com
-                    </Text>
+                    <Image source={require('../image/bitmap.png')} style={{width: 220, height: 52,}}/>
                 </View>
                 <ImageBackground source={require('../image/kota.png')} style={{width: '100%', height: 200}} />
             </View>

@@ -40,12 +40,10 @@ class Home extends React.Component {
   render() {
     return (
       <View style={{ backgroundColor: 'white' }}>
-        <StatusBar background= '#00b5ec' />
-        <View style={{ flexDirection: 'row' , backgroundColor: '#00b5ec', justifyContent: 'space-between', padding: 10 }}>
+        <StatusBar background= '#424242' />
+        <View style={{ flexDirection: 'row' , backgroundColor: '#424242', justifyContent: 'space-between', padding: 10 }}>
           <Image style={{ width: 25, height: 25 }} source={require('../image/menu.png')} />
-          <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'black', textAlign: 'center', alignSelf: 'center', fontStyle: 'italic'}} >
-            BabeKost.com
-          </Text>
+          <Image style={{  width: 138, height: 33, alignSelf: 'center'}} source={require('../image/bitmap.png')} />
           <Image source={require('../image/chat.png')} />
         </View>
         <ScrollView style={{marginBottom: 50}}>
