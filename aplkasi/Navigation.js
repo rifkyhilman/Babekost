@@ -2,22 +2,26 @@ import { createBottomTabNavigator, createAppContainer } from 'react-navigation'
 import React from 'react'
 import { Image } from 'react-native'
 import Profile from './Profile'
-import Home from './Home'
+import Kost from './Kost'
 import Wishlist from './Wishlis/Wishlist'
+import Chat from './Chat'
 
 
 const menu = createBottomTabNavigator({
-    Home: {
-        screen: Home,
+    Explore: {
+        screen: Kost,
     },
     Wishlist: {
         screen: Wishlist,
+    }, 
+    Chat: {
+      screen: Chat,
     },
     Profile: {
         screen: Profile,
-    },
+    }
 }, {
-    initialRouteName: 'Home',
+    initialRouteName: 'Explore',
     tabBarOptions: {
         activeTintColor: 'yellow',
         style: {
@@ -28,16 +32,22 @@ const menu = createBottomTabNavigator({
     defaultNavigationOptions: ({ navigation }) => ({
         tabBarIcon: ({ focused, horizontal, tintColor }) => {
           const { routeName } = navigation.state;
-          if (routeName === 'Home') {
+          if (routeName === 'Explore') {
             return (
               <Image
-                source={ require('../image/house.png') }
+                source={ require('../image/search.png') }
                 style={{ width: 20, height: 20, }} />
             );
           } else if (routeName === 'Wishlist') {
             return (
               <Image
-                source={ require('../image/folder.png') }
+                source={ require('../image/like.png') }
+                style={{ width: 20, height: 20, }} />
+            );
+          } else if (routeName === 'Chat') {
+            return (
+              <Image
+                source={ require('../image/chat.png') }
                 style={{ width: 20, height: 20, }} />
             );
           } else if (routeName === 'Profile') {
@@ -46,10 +56,11 @@ const menu = createBottomTabNavigator({
                 source={ require('../image/user.png') }
                 style={{ width: 20, height: 20, }} />
             );
-          } else {
+          } 
+           else {
             return (
               <Image
-              source={ require('../image/house.png') }
+              source={ require('../image/search.png') }
                 style={{ width: 20, height: 20 }} />
             );
           }

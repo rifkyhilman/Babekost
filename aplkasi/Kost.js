@@ -7,15 +7,15 @@ import {
 import axios from 'axios'
 import ImageSlider from 'react-native-image-slider'
 
-class Home extends React.Component {
+class Kost extends React.Component {
 
   state = {
     kota: [],
     images: [
-      require('../ImageSlider/posterA.jpg'),
-      require('../ImageSlider/posterB.jpg'),
-      require('../ImageSlider/posterC.jpg'),
-      require('../ImageSlider/posterD.jpg'),
+      require('../ImageSlider/posterA.jpeg'),
+      require('../ImageSlider/posterB.jpeg'),
+      require('../ImageSlider/posterC.jpeg'),
+      require('../ImageSlider/posterD.jpeg'),
     ]
   }
 
@@ -39,15 +39,13 @@ class Home extends React.Component {
 
   render() {
     return (
-      <View style={{ backgroundColor: 'white' }}>
+      <View style={{ background: '#424242' }}>
         <StatusBar background= '#424242' />
         <View style={{ flexDirection: 'row' , backgroundColor: '#424242', justifyContent: 'space-between', padding: 10 }}>
-          <Image style={{ width: 25, height: 25 }} source={require('../image/menu.png')} />
-          <Image style={{  width: 138, height: 33, alignSelf: 'center'}} source={require('../image/bitmap.png')} />
-          <Image source={require('../image/chat.png')} />
+          <Image style={{  width: 92, height: 22, alignSelf: 'center'}} source={require('../image/bitmap2.png')} />
         </View>
-        <ScrollView style={{marginBottom: 50}}>
-        <View style={{ backgroundColor: 'white', }}>
+        <ScrollView style={{marginBottom: 50, backgroundColor: '#f5f5f5'}}>
+        <View style={{ backgroundColor: 'white', marginBottom: 10}}>
           <Text style={{ marginLeft: 20, marginTop: 20 }}>
             Hai,Rifki
           </Text>
@@ -58,7 +56,7 @@ class Home extends React.Component {
         </View>
         <View style={{ backgroundColor: 'white' }}>
           <Text style={{ fontWeight: 'bold', fontSize: 18, margin: 20, }}>
-            Iklan
+            Promo
           </Text>
           <View style={{flexDirection: 'row', height: 200, paddingLeft: 20, paddingRight: 20}}>
           <ImageSlider 
@@ -102,4 +100,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home
+export default Kost
