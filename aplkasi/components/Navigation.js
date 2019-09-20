@@ -2,14 +2,14 @@ import { createBottomTabNavigator, createAppContainer } from 'react-navigation'
 import React from 'react'
 import { Image } from 'react-native'
 import Profile from './Profile'
-import Kost from './Kost'
-import Wishlist from './Wishlis/Wishlist'
+import Wishlist from './Wishlist'
 import Chat from './Chat'
+import Home from './Home'
 
 
 const menu = createBottomTabNavigator({
     Explore: {
-        screen: Kost,
+        screen: Home,
     },
     Wishlist: {
         screen: Wishlist,
@@ -17,7 +17,7 @@ const menu = createBottomTabNavigator({
     Chat: {
       screen: Chat,
     },
-    Profile: {
+    Login: {
         screen: Profile,
     }
 }, {
@@ -50,7 +50,7 @@ const menu = createBottomTabNavigator({
                 source={ require('../image/chat.png') }
                 style={{ width: 20, height: 20, }} />
             );
-          } else if (routeName === 'Profile') {
+          } else if (routeName === 'Login') {
             return (
               <Image
                 source={ require('../image/user.png') }

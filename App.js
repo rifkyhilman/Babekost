@@ -1,6 +1,6 @@
 import React from 'react'
-import Splash from './aplkasi/Splash'
-import Navigation from './aplkasi/Navigation'
+import Splash from './aplkasi/components/Splash'
+import Navigation from './aplkasi/components/Navigation'
 
 class App extends React.Component {
   

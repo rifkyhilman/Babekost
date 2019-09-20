@@ -7,7 +7,9 @@ import {
 import axios from 'axios'
 import ImageSlider from 'react-native-image-slider'
 
-class Kost extends React.Component {
+
+
+class Pekerjaan extends React.Component {
 
   state = {
     kota: [],
@@ -41,16 +43,13 @@ class Kost extends React.Component {
     return (
       <View style={{ background: '#424242' }}>
         <StatusBar background= '#424242' />
-        <View style={{ flexDirection: 'row' , backgroundColor: '#424242', justifyContent: 'space-between', padding: 10 }}>
-          <Image style={{  width: 92, height: 22, alignSelf: 'center'}} source={require('../image/bitmap2.png')} />
-        </View>
         <ScrollView style={{marginBottom: 50, backgroundColor: '#f5f5f5'}}>
         <View style={{ backgroundColor: 'white', marginBottom: 10}}>
           <Text style={{ marginLeft: 20, marginTop: 20 }}>
-            Hai,Rifki
+            Hai,
           </Text>
           <Text style={{ fontSize: 20, marginLeft: 20, marginBottom: 10 }}>
-            Mau cari Kost dimana ?
+            Mau cari Pekerjaan dimana ?
           </Text>
           <TextInput style={{ backgroundColor: '#DCDCDC', borderRadius: 10, width: 320, marginLeft: 20, marginBottom: 15, paddingLeft: 15,}} placeholder='massukan alamat' />
         </View>
@@ -100,4 +99,4 @@ class Kost extends React.Component {
   }
 }
 
-export default Kost
+export default Pekerjaan
