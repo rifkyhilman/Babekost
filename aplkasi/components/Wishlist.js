@@ -15,9 +15,9 @@ const menu = createMaterialTopTabNavigator({
 }, {
     initialRouteName: 'Favorite',
     tabBarOptions: {
-        activeTintColor: '#FF8C00',
+        activeTintColor: 'black',
         style: {
-            backgroundColor: '#424242'
+            backgroundColor: 'white'
         }
     },
     
