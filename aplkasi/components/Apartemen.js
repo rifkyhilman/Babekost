@@ -43,7 +43,7 @@ class Apartemen extends React.Component {
     return (
       <View style={{ background: '#424242' }}>
         <StatusBar background= '#424242' />
-        <ScrollView style={{marginBottom: 50, backgroundColor: '#f5f5f5'}}>
+        <ScrollView style={{backgroundColor: '#f5f5f5'}}>
         <View style={{ backgroundColor: 'white', marginBottom: 10}}>
           <Text style={{ marginLeft: 20, marginTop: 20 }}>
             Hai,
@@ -65,12 +65,12 @@ class Apartemen extends React.Component {
           </View>
           <View style={{flexDirection: 'row', justifyContent: 'space-between', padding: 20, alignItems: 'center',}}>
             <Text>
-              Tertarik mengiklankan kosmu ?
+              Anda Pemilik Kost ?
             </Text>
             <TouchableHighlight onPress={this.ditekan}>
-              <View style={{backgroundColor: '#FF8C00',width: 80, height: 30, borderRadius: 5, justifyContent: 'center', alignItems: 'center'}}>
-                <Text style={{color: 'white', fontSize: 10}}>
-                  Pasang iklan 
+              <View style={{borderColor: '#FF8C00', borderWidth: 2,width: 80, height: 30, borderRadius: 5, justifyContent: 'center', alignItems: 'center'}}>
+                <Text style={{color: '#FF8C00', fontSize: 10}}>
+                  Login
                 </Text>
               </View>
             </TouchableHighlight>

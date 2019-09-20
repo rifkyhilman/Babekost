@@ -23,9 +23,10 @@ const menu = createBottomTabNavigator({
 }, {
     initialRouteName: 'Explore',
     tabBarOptions: {
-        activeTintColor: 'yellow',
+        pressColor: 'black',
+        activeTintColor: 'black',
         style: {
-            backgroundColor: '#424242'
+            backgroundColor: 'white'
         }
     },
     

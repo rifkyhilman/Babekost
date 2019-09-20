@@ -41,9 +41,9 @@ class Kost extends React.Component {
 
   render() {
     return (
-      <View style={{ background: '#424242' }}>
-        <StatusBar background= '#424242' />
-        <ScrollView style={{marginBottom: 50, backgroundColor: '#f5f5f5'}}>
+      <View style={{ background: 'white' }}>
+        <StatusBar background= '#white' />
+        <ScrollView style={{backgroundColor: '#f5f5f5'}}>
         <View style={{ backgroundColor: 'white', marginBottom: 10}}>
           <Text style={{ marginLeft: 20, marginTop: 20 }}>
             Hai,
@@ -65,12 +65,12 @@ class Kost extends React.Component {
           </View>
           <View style={{flexDirection: 'row', justifyContent: 'space-between', padding: 20, alignItems: 'center',}}>
             <Text>
-              Tertarik mengiklankan kosmu ?
+              Anda Pemilik Kost ?
             </Text>
             <TouchableHighlight onPress={this.ditekan}>
-              <View style={{backgroundColor: '#FF8C00',width: 80, height: 30, borderRadius: 5, justifyContent: 'center', alignItems: 'center'}}>
-                <Text style={{color: 'white', fontSize: 10}}>
-                  Pasang iklan 
+              <View style={{borderColor: 'blue',borderWidth: 2,color: 'gray',width: 80, height: 30, borderRadius: 5, justifyContent: 'center', alignItems: 'center'}}>
+                <Text style={{color: 'blue', fontSize: 13}}>
+                  Login
                 </Text>
               </View>
             </TouchableHighlight>

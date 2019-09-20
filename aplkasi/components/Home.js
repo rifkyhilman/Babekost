@@ -1,9 +1,10 @@
 import { createAppContainer, createMaterialTopTabNavigator } from 'react-navigation'
 import React from 'react'
 import { Image } from 'react-native'
-import Kost from './Kost'
-import Apartemen from './Apartemen'
-import Pekerjaan from './Pekerjaan'
+import Apartemen from './Apartemen';
+import Kost from './Kost';
+import Pekerjaan from './Pekerjaan';
+
 
 
 const menu = createMaterialTopTabNavigator({
@@ -11,21 +12,22 @@ const menu = createMaterialTopTabNavigator({
         screen: Kost,
     },
     Apartemen: {
-      screen: Apartemen,
-    },
+        screen: Apartemen,
+    }, 
     Pekerjaan: {
-        screen: Pekerjaan,
-      },
+      screen: Pekerjaan,
+    }
 }, {
     initialRouteName: 'Kost',
     tabBarOptions: {
-        activeTintColor: 'white',
+        activeTintColor: 'black',
         style: {
-            backgroundColor: '#424242'
+            borderBottomColor: 'blue',
+            backgroundColor: 'white'
         }
     },
     
-  defaultNavigationOptions: ({ navigation }) => ({
+    defaultNavigationOptions: ({ navigation }) => ({
         tabBarIcon: ({ focused, horizontal, tintColor }) => {
           const { routeName } = navigation.state;
           if (routeName === 'Kost') {
@@ -37,17 +39,17 @@ const menu = createMaterialTopTabNavigator({
           } else if (routeName === 'Apartemen') {
             return (
               <Image
-                source={ require('../image/chat.png') }
+                source={ require('../image/like.png') }
                 style={{ width: 20, height: 20, }} />
             );
-          } else if (routeName === 'Pekerjaaan') {
+          } else if (routeName === 'Pekerjaan') {
             return (
               <Image
                 source={ require('../image/chat.png') }
                 style={{ width: 20, height: 20, }} />
             );
           }
-        else {
+           else {
             return (
               <Image
               source={ require('../image/search.png') }
